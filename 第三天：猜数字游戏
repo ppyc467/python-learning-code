@@ -1,0 +1,21 @@
+"""
+用循环计算1-100的和(略)
+total = 0
+for i in range(1,101):
+    total += i
+print("1到100的和为", total)
+
+实现猜数字游戏
+"""
+
+#随便设置正确答案
+answer = 55
+while True:
+    guess = int(input("猜一个1-100的数"))
+    if guess == answer:
+        print("正确")
+        break
+    elif guess > answer:
+        print("大了")
+    else:
+        print("小了")
