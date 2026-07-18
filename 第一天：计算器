@@ -25,3 +25,33 @@ if op == "/":
 else:
     print("运算符非法")
 
+"""
+1. 变量命名规则
+合法命名：stu_age、num1、model_name
+非法命名：1num、stu-age、for（关键字）
+规范：小写 + 下划线，不使用中文变量名
+2. 数据类型转换常见错误
+错误：直接用 input 字符串做计算
+python
+运行
+# 报错！input是字符串，不能加减
+a = input("输入数字")
+print(a + 5)
+解决：a = int(input()) / a = float(input())
+错误：数字和字符串直接拼接打印
+python
+运行
+age = 18
+print("年龄：" + age) # 报错
+两种解决：
+print("年龄：", age)
+print(f"年龄：{age}")
+错误：除数为 0 触发崩溃
+解决：除法前增加判断 if num2 == 0
+3. 今日知识点总结
+变量 = 值 完成赋值存储数据
+int 整数、float 小数、str 字符串三大基础类型
+input 获取输入（默认 str），print 输出内容
+int ()/float ()/str () 实现类型互相转换
+简易计算器结合输入、类型转换、条件判断完成逻辑
+"""
