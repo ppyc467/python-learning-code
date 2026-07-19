@@ -1,0 +1,50 @@
+"""
+用字典存储学生信息（姓名、年龄、成绩），实现增删改查
+"""
+
+#基本信息
+student = {
+    "name" : "py",
+    "age" : 18,
+    "score" : 100
+}
+
+#交互系统
+while True:
+    print("\n===== 学生信息管理 =====")
+    print("1. 查看全部信息")
+    print("2. 新增字段")
+    print("3. 修改信息")
+    print("4. 删除字段")
+    print("5. 退出程序")
+    choice = input("请输入你的选择：")
+    if choice == "1":
+        print("学生信息如下：")
+        for key, value in student.items():
+            print(f"{key}: {value}")
+    elif choice == "2":
+        key = input("请输入要新增的字段名：")
+        value = input("请输入对应的值：")
+        student[key] = value
+        print("新增成功！")
+    elif choice == "3":
+        key = input("请输入要修改的字段名：")
+        if key in student:
+            value = input("请输入新的值：")
+            student[key] = value
+            print("修改成功！")
+        else:
+            print("该字段不存在！")
+    elif choice == "4":
+        key = input("请输入要删除的字段名：")
+        if key in student:
+            del student[key]
+            print("删除成功！")
+        else:
+            print("该字段不存在！")
+    elif choice == "5":
+        print("程序退出")
+        break
+    else:
+        print("输入无效，请重新选择")
+    
