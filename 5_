@@ -1,0 +1,27 @@
+"""
+写一个计算阶乘的函数，实现斐波那契数列
+"""
+
+#阶乘
+def factorial(n):
+    # 边界处理：小于0无意义
+    if n <= 0:
+        return 1
+    return n * factorial(n-1)
+
+#斐波那契数列
+def fibonacci(n):
+    if n<=2:
+        return 1
+    return fibonacci(n-2) + fibonacci(n-1)
+    
+#测试
+print(factorial(4))
+print(fibonacci(6))
+
+"""
+# 定义函数
+def 函数名(参数1, 参数2):
+    函数体代码
+    return 返回结果
+"""

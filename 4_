@@ -29,6 +29,7 @@ while True:
         print("新增成功！")
     elif choice == "3":
         key = input("请输入要修改的字段名：")
+        #注意边界条件
         if key in student:
             value = input("请输入新的值：")
             student[key] = value
@@ -48,3 +49,82 @@ while True:
     else:
         print("输入无效，请重新选择")
     
+"""
+1. 列表（list）
+核心特点：有序、元素可修改、允许重复，是最常用的序列容器。
+
+# 1. 创建列表，用方括号包裹
+scores = [85, 92, 78, 90, 88]
+
+# 2. 查：通过索引访问，下标从0开始
+print(scores[0])   # 取第一个元素 85
+print(scores[-1])  # 取最后一个元素 88
+print(92 in scores) # 判断元素是否存在，返回True
+
+# 3. 增
+scores.append(95)      # 末尾追加元素
+scores.insert(2, 80)   # 指定下标位置插入元素
+
+# 4. 改：通过索引直接赋值
+scores[1] = 96
+
+# 5. 删
+scores.pop()       # 删除最后一个元素
+scores.remove(78)  # 删除指定值的元素
+del scores[0]      # 删除指定下标的元素
+
+# 常用操作
+len(scores)  # 求列表长度
+2. 元组（tuple）
+核心特点：有序、元素不可修改、允许重复，适合存储不需要改动的数据。
+
+# 1. 创建元组，用圆括号包裹
+info = ("张三", 18, "计算机专业")
+
+# 2. 查：和列表一样通过索引访问
+print(info[0])
+
+# 注意：元组创建后不能修改、新增、删除，下面代码会直接报错
+# info[1] = 20
+3. 字典（dict）
+核心特点：键值对（key-value）存储，键必须唯一且不可变，查找速度极快，适合存储一个对象的多个属性。
+
+# 1. 创建字典，格式 {键: 值, 键: 值}
+student = {
+    "name": "张三",
+    "age": 18,
+    "score": 85
+}
+
+# 2. 查
+print(student["name"])       # 通过键取值，键不存在会报错
+print(student.get("gender", "未知")) # 键不存在返回默认值，不报错
+
+# 3. 增 / 改：键存在就是修改，不存在就是新增
+student["score"] = 90        # 修改已有键的值
+student["gender"] = "男"     # 新增键值对
+
+# 4. 删
+del student["age"]           # 删除指定键值对
+student.pop("score")         # 删除并返回对应的值
+
+# 常用方法
+student.keys()    # 获取所有键
+student.values()  # 获取所有值
+student.items()   # 获取所有键值对，常用于遍历
+
+4. 集合（set）
+核心特点：无序、元素不重复，最常用于数据去重。
+
+# 1. 创建集合，用花括号包裹；空集合只能用set()，{}是空字典
+nums = {1, 2, 3, 2, 1}
+print(nums)  # 自动去重，输出 {1, 2, 3}
+
+# 最常用场景：列表去重
+li = [1, 2, 2, 3, 3, 3]
+new_li = list(set(li))  # 转集合去重再转回列表
+
+# 2. 增删
+nums.add(4)       # 添加元素
+nums.remove(2)    # 删除指定元素
+"""
