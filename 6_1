@@ -1,0 +1,14 @@
+#先写入一个学生信息文件，再读取打印内容。
+
+#写入一个文件
+with open("Students.txt", "w", encoding="utf-8") as f:
+    f.write("姓名,年龄,成绩\n")
+    f.write("潘越,19,100\n")
+    f.write("张三,18,85\n")
+    f.write("李四,19,92\n")
+    f.write("王五,17,78\n")
+
+#读取打印内容
+with open("Students.txt", "r", encoding="utf-8") as f:
+    for line in f:
+        print(line)
