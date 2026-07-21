@@ -1,0 +1,57 @@
+import numpy as np
+
+#用numpy实现向量和矩阵的基本运算
+
+# 1. 创建两个3维向量
+v1 = np.array([1, 2, 3])
+v2 = np.array([4, 5, 6])
+
+# 2. 向量加减（对应位置运算）
+print("v1 + v2 =", v1 + v2)  # 输出 [5 7 9]
+print("v1 - v2 =", v1 - v2)  # 输出 [-3 -3 -3]
+
+# 3. 数乘
+print("2 * v1 =", 2 * v1)    # 输出 [2 4 6]
+
+# 4. 点积（内积）：对应相乘再相加，结果是标量
+dot_result = np.dot(v1, v2)
+# 等价写法：dot_result = v1 @ v2
+print("v1与v2的点积：", dot_result)  # 1*4 + 2*5 + 3*6 = 32
+
+# 5. 求向量的模（长度）
+v1_norm = np.linalg.norm(v1)
+print("v1的模长：", v1_norm)
+
+# 1. 创建两个2×2矩阵
+A = np.array([[1, 2],
+              [3, 4]])
+B = np.array([[5, 6],
+              [7, 8]])
+
+print("矩阵A的形状：", A.shape)  # 输出 (2, 2)，代表2行2列
+
+# 2. 矩阵加减
+print("A + B：\n", A + B)
+print("A - B：\n", A - B)
+
+# 3. 数乘
+print("3 * A：\n", 3 * A)
+
+# 4. 矩阵乘法（行乘列规则）
+# 三种写法等价
+C = np.dot(A, B)
+# C = A @ B
+# C = A.dot(B)
+print("A × B 矩阵乘法结果：\n", C)
+
+# 5. 按元素相乘（重点：和矩阵乘法完全不同！）
+print("A、B按元素相乘：\n", A * B)
+
+# 6. 矩阵转置：行和列互换
+print("A的转置：\n", A.T)
+
+# 7. 求逆矩阵（仅方阵可逆）
+A_inv = np.linalg.inv(A)
+print("A的逆矩阵：\n", A_inv)
+# 验证：矩阵 × 自身逆矩阵 = 单位矩阵（对角线为1，其余为0）
+print("验证 A @ A_inv：\n", A @ A_inv)
